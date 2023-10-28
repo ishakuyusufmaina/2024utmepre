@@ -17,8 +17,9 @@ class FillDrill {
  });
      //source = source.replaceAll("\n", "<br>");
  this.root.innerHTML= source;
-     this.root.style.whiteSpace = "pre";
- let inputs = this.root.querySelectorAll("input");
+    // this.root.style.whiteSpace = "pre";
+ 
+let inputs = this.root.querySelectorAll("input");
    for (let i=0; i<inputs.length; i++){
      inputs[i].onchange = (e)=>{
        this.studentValues[i] = e.target.value;
