@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <!-- Latest compiled and minified CSS -->
+<link href=/"https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src=/"https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <title>Hello, World!</title>
+  <script src="scripts/jambdrill.js"></script>
+</head>
+<body>
+  <h1>
+    Hello, World!
+  </h1>
+  <main class="container">
+    <div id="root"></div>
+    <button id="subBtn">Submit</button>
+  </main>
+  
+  
+  <script>
+  const quiz = new FillDrill(
+`In physics, exact measurement requires two things:
+quantity and -unit-.
+
+In ascending alphabetical order (A-Z),
+The three most important basic quantities are
+-length-,
+-mass- and
+-time-
+
+-fundamental- quantities are independent of other quantities
+and their units are called -fundamental- unit.
+
+SI unit stands for -systeme- -international- unit.
+
+The SI unit is based on (no abbreviation)
+-meter- as the unit of length,
+-kilogram- as the unit of mass,
+and -second- as the unit of time.
+  
+Complete the table
+  <table>
+<tr><th>Quantity</th><th>SI unit</th><th>Unit abbreviation</th></tr>
+<tr><td>length</td><td>-meter-</td><td>-m-</td></tr>
+<tr><td>-time-</td><td>second</td><td>-s-</td></tr>
+<tr><td>-mass-</td><td>-kilogram-</td><td>kg</td></tr>
+<tr><td>temperature</td><td>-kelvin-</td><td>-K-</td></tr>
+<tr><td>-electric current-</td><td>ampere</td><td>-A-</td></tr>
+<tr><td>-amount of substance-</td><td>-mole-</td><td>mol.</td></tr>
+</table>`);
+
+ root.appendChild(quiz.render());
+ subBtn.onclick = ()=>{
+   quiz.readOnly();
+   alert(quiz.score);
+ }
+
+
+  </script>
+
+<style>
+#root {
+  font-size: 24px;
+}
+
+table, td {
+  border: 2px solid black;
+}
+
+</style>
+</body>
+</html>
